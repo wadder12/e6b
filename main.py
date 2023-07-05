@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from calc.e6b import E6BCalculator
+# from calc.LandingCalculator import LandingDistanceCalculator
+# from calc.PressureAltitude import PressureAltitudeCalculator
 
 def show_main_window():
     # Create the main application window
@@ -9,7 +11,8 @@ def show_main_window():
     window.title("E6B Calculator")
 
     # Create an instance of the E6B calculator
-    calculator = E6BCalculator(window)
+    calculator = E6BCalculator(window), #!LandingDistanceCalculator(window), #!PressureAltitudeCalculator(window)
+    
 
     # Start the application
     window.mainloop()
