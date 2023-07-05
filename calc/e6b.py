@@ -117,9 +117,10 @@ class E6BCalculator:
 
     def animate_fuel_consumption(self, distance, airspeed, fuel_rate, altitude, fuel_capacity, initial_fuel):
         time = distance / airspeed
+        groundspeed = distance / time * 60
         fuel_consumption = time * fuel_rate
         fuel_remaining = initial_fuel - fuel_consumption
-        result = f"Time: {time:.2f} hours\nGroundspeed: {distance / time:.2f} knots\nFuel Consumption: {fuel_consumption:.2f} gallons\nFuel Remaining: {fuel_remaining:.2f} gallons"
+        result = f"Time: {time:.2f} hours\nGroundspeed: {groundspeed:.2f} knots\nFuel Consumption: {fuel_consumption:.2f} gallons\nFuel Remaining: {fuel_remaining:.2f} gallons"
         self.output_label.config(text=result, font=("Helvetica", 12))
 
         # Animate the label color change
@@ -131,3 +132,4 @@ class E6BCalculator:
         # Re-enable the Calculate button after animation
         calculate_button = self.output_frame.winfo_children()[0]
         calculate_button.config(state=tk.NORMAL)
+
